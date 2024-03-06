@@ -378,10 +378,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">menggambar persamaan bidang dalam ruang 3D</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan">penyelesaian sistem persamaan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mendefinisikan-fungsi-operasi-baris-eliminasi-gauss">mendefinisikan fungsi operasi baris eliminasi gauss</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan">penyelesaian sistem persamaan</a></li>
 </ul>
 
             </nav>
@@ -396,6 +393,21 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="menggambar-persamaan-bidang-dalam-ruang-3d">
 <h1>menggambar persamaan bidang dalam ruang 3D<a class="headerlink" href="#menggambar-persamaan-bidang-dalam-ruang-3d" title="Link to this heading">#</a></h1>
+<p><strong>ELIMINASI GAUSSIAN</strong><br />
+Eliminasi gauss ditemukan oleh Carl Friedrich Gauss, metode ini dapat dimanfaatkan untuk memecahkan sistem persamaan linear dengan merepresentasikan (mengubah) menjadi bentuk matriks, matriks tersebut lalu diubah kebentuk Eselon Baris melalui Operasi Baris Elementer. Kemudian sistem diselesaikan dengan substitusi balik.</p>
+<p><strong>Bentuk Eselon Baris</strong><br />
+Suatu matriks memiliki bentuk eselon baris jika memenuhi 3 kriteria berikut</p>
+<ol class="arabic simple">
+<li><p>Jika didalam baris terdapat elemen-elemen yang tidak semuanya nol, maka bilangan tak nol pertama di dalam baris tersebut adalah 1.</p></li>
+<li><p>kalau ada baris-baris yang semua elemennya  bernilai 0 semua, maka baris-baris tersebut harus dikelompokkan dan diletakkan dibagian bawah matriks.</p></li>
+<li><p>Jika terdapat dua baris berurutan yang memenuhi kriteria pertama, maka angka 1 (pertama/utama) dari baris yang lebih rendah berada lebih kekanan dari angka 1(pertama/utama) baris yang diatasnya.</p></li>
+</ol>
+<p>ADA TIGA OPERASI YANG DAPAT DILAKUKAN</p>
+<ol class="arabic simple">
+<li><p>Tukarkan posisi kedua persamaan.</p></li>
+<li><p>Kalikan persamaan dengan bilangan apa pun yang bukan nol.</p></li>
+<li><p>Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan persamaan lainnya.</p></li>
+</ol>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan">
 <h1>penyelesaian sistem persamaan<a class="headerlink" href="#penyelesaian-sistem-persamaan" title="Link to this heading">#</a></h1>
@@ -406,56 +418,7 @@ $<span class="math notranslate nohighlight">\(
 x_1+2x_2+3x_3=9\\
 2x_1+x_2+x_3=5\\
 \)</span>$</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>matplotlib-venn
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: matplotlib-venn in /usr/local/lib/python3.10/dist-packages (0.11.10)
-Requirement already satisfied: matplotlib in /usr/local/lib/python3.10/dist-packages (from matplotlib-venn) (3.7.1)
-Requirement already satisfied: numpy in /usr/local/lib/python3.10/dist-packages (from matplotlib-venn) (1.25.2)
-Requirement already satisfied: scipy in /usr/local/lib/python3.10/dist-packages (from matplotlib-venn) (1.11.4)
-Requirement already satisfied: contourpy&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (1.2.0)
-Requirement already satisfied: cycler&gt;=0.10 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (0.12.1)
-Requirement already satisfied: fonttools&gt;=4.22.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (4.49.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (1.4.5)
-Requirement already satisfied: packaging&gt;=20.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (23.2)
-Requirement already satisfied: pillow&gt;=6.2.0 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (9.4.0)
-Requirement already satisfied: pyparsing&gt;=2.3.1 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (3.1.1)
-Requirement already satisfied: python-dateutil&gt;=2.7 in /usr/local/lib/python3.10/dist-packages (from matplotlib-&gt;matplotlib-venn) (2.8.2)
-Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.10/dist-packages (from python-dateutil&gt;=2.7-&gt;matplotlib-&gt;matplotlib-venn) (1.16.0)
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">A</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">19</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">9</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">]])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 8  9  1 19]
- [ 1  2  3  9]
- [ 2  1  1  5]]
-</pre></div>
-</div>
-</div>
-</div>
-<section id="mendefinisikan-fungsi-operasi-baris-eliminasi-gauss">
-<h2>mendefinisikan fungsi operasi baris eliminasi gauss<a class="headerlink" href="#mendefinisikan-fungsi-operasi-baris-eliminasi-gauss" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>RowSwap()
-jhgyugyfytvgbjhbnjn</p></li>
-<li><p>Rowscale()
-bjhbhftyftdtgvghvh</p></li>
-<li><p>RowAdd()
-bjhgyftyftygbjbnjk</p></li>
-</ul>
+<p>yang pertama deklarasikan RowSwap, RowAdd dan RowScale untuk perhitungan selanjutnya</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowSwap</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
@@ -509,6 +472,7 @@ bjhgyftyftygbjbnjk</p></li>
 </div>
 </div>
 </div>
+<p>buat array NumPy dengan nilai-nilai ini. Kita akan memberi nama pada array A, sehingga kita bisa memanggilnya lagi nanti.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -703,7 +667,6 @@ x1: 1
 </div>
 </div>
 </section>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -770,10 +733,7 @@ x1: 1
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">menggambar persamaan bidang dalam ruang 3D</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan">penyelesaian sistem persamaan</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mendefinisikan-fungsi-operasi-baris-eliminasi-gauss">mendefinisikan fungsi operasi baris eliminasi gauss</a></li>
-</ul>
-</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan">penyelesaian sistem persamaan</a></li>
 </ul>
 
   </nav></div>
