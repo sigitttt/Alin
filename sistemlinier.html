@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>menggambar persamaan bidang dalam ruang 3D &#8212; My sample book</title>
+    <title>TUGAS 1 &#8212; My sample book</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'sistemlinier';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
-    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+    <link rel="next" title="TUGAS 1" href="Tugas1.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -367,7 +367,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>menggambar persamaan bidang dalam ruang 3D</h1>
+    <h1>TUGAS 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,7 +377,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">menggambar persamaan bidang dalam ruang 3D</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>TUGAS 1</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-linear-dan-metode-eliminasi-gaussian"><strong>SISTEM LINEAR DAN METODE ELIMINASI GAUSSIAN</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-metode-eliminasi-gauss">Langkah-langkah Metode Eliminasi Gauss</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>contoh</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan">penyelesaian sistem persamaan</a></li>
 </ul>
 
@@ -391,23 +395,73 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="menggambar-persamaan-bidang-dalam-ruang-3d">
-<h1>menggambar persamaan bidang dalam ruang 3D<a class="headerlink" href="#menggambar-persamaan-bidang-dalam-ruang-3d" title="Link to this heading">#</a></h1>
-<p><strong>ELIMINASI GAUSSIAN</strong><br />
-Eliminasi gauss ditemukan oleh Carl Friedrich Gauss, metode ini dapat dimanfaatkan untuk memecahkan sistem persamaan linear dengan merepresentasikan (mengubah) menjadi bentuk matriks, matriks tersebut lalu diubah kebentuk Eselon Baris melalui Operasi Baris Elementer. Kemudian sistem diselesaikan dengan substitusi balik.</p>
-<p><strong>Bentuk Eselon Baris</strong><br />
-Suatu matriks memiliki bentuk eselon baris jika memenuhi 3 kriteria berikut</p>
+  <section id="tugas-1">
+<h1><strong>TUGAS 1</strong><a class="headerlink" href="#tugas-1" title="Link to this heading">#</a></h1>
+</section>
+<section id="sistem-linear-dan-metode-eliminasi-gaussian">
+<h1><strong>SISTEM LINEAR DAN METODE ELIMINASI GAUSSIAN</strong><a class="headerlink" href="#sistem-linear-dan-metode-eliminasi-gaussian" title="Link to this heading">#</a></h1>
+</section>
+<section id="langkah-langkah-metode-eliminasi-gauss">
+<h1>Langkah-langkah Metode Eliminasi Gauss<a class="headerlink" href="#langkah-langkah-metode-eliminasi-gauss" title="Link to this heading">#</a></h1>
+<p>Eliminasi gauss ditemukan oleh Carl Friedrich Gauss, metode ini dapat dimanfaatkan untuk memecahkan sistem persamaan linear dengan merepresentasikan (mengubah) menjadi bentuk matriks, matriks tersebut lalu diubah kebentuk Eselon Baris melalui Operasi Baris Elementer. Kemudian sistem diselesaikan dengan substitusi balik.</p>
 <ol class="arabic simple">
+<li><p><em>Pembentukan Matriks Augmented:</em> Menggabungkan matriks koefisien (A) dengan vektor konstanta (B) untuk membentuk matriks augmented ([A|B]).</p></li>
+<li><p><em>Mengubah ke Bentuk Eselon Baris (REF):</em> Menggunakan operasi baris elementer untuk mengubah matriks ke bentuk di mana setiap baris di bawah memiliki lebih banyak nol awal daripada baris di atasnya. Langkah ini mencakup membuat semua elemen di bawah diagonal utama menjadi nol.</p></li>
+</ol>
+<p>Suatu matriks memiliki bentuk eselon baris jika memenuhi 3 kriteria berikut</p>
+<ol class="arabic">
 <li><p>Jika didalam baris terdapat elemen-elemen yang tidak semuanya nol, maka bilangan tak nol pertama di dalam baris tersebut adalah 1.</p></li>
 <li><p>kalau ada baris-baris yang semua elemennya  bernilai 0 semua, maka baris-baris tersebut harus dikelompokkan dan diletakkan dibagian bawah matriks.</p></li>
-<li><p>Jika terdapat dua baris berurutan yang memenuhi kriteria pertama, maka angka 1 (pertama/utama) dari baris yang lebih rendah berada lebih kekanan dari angka 1(pertama/utama) baris yang diatasnya.</p></li>
+<li><p>Jika terdapat dua baris berurutan yang memenuhi kriteria pertama, maka angka 1 (pertama/utama) dari baris yang lebih rendah berada lebih kekanan dari angka 1(pertama/utama) baris yang diatasnya.</p>
+<p><em>ADA TIGA OPERASI YANG DAPAT DILAKUKAN</em></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 1. Tukarkan posisi kedua persamaan.
+
+ 2. Kalikan persamaan dengan bilangan apa pun yang bukan nol.
+
+ 3. Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan persamaan lainnya.
+</pre></div>
+</div>
+</li>
+<li><p><em>Mengubah ke Bentuk Eselon Baris Tereduksi (RREF):</em> (Opsional, tergantung pada tujuan) Lanjutkan operasi baris untuk membuat semua elemen di atas dan di bawah diagonal utama menjadi nol, sementara semua elemen di diagonal utama menjadi satu. Ini menghasilkan solusi langsung dari matriks.</p></li>
+<li><p><em>Substitusi Balik:</em> Jika hanya REF yang digunakan, mulailah dari baris terbawah, substitusi balik untuk menemukan nilai variabel satu per satu.</p></li>
 </ol>
-<p>ADA TIGA OPERASI YANG DAPAT DILAKUKAN</p>
-<ol class="arabic simple">
-<li><p>Tukarkan posisi kedua persamaan.</p></li>
-<li><p>Kalikan persamaan dengan bilangan apa pun yang bukan nol.</p></li>
-<li><p>Gantikan suatu persamaan dengan jumlah persamaan itu sendiri dan kelipatan persamaan lainnya.</p></li>
-</ol>
+</section>
+<section id="contoh">
+<h1>Contoh<a class="headerlink" href="#contoh" title="Link to this heading">#</a></h1>
+<p>Pertimbangkan sistem persamaan linier berikut:
+[ \begin{align*}
+x + 2y - z &amp;= 8 \
+2x - 3y + 2z &amp;= -11 \
+-2x + 4y + 3z &amp;= 3
+\end{align*} ]</p>
+<p>Langkah 1: Matriks Augmented
+[ [A|B] = \begin{pmatrix}
+1 &amp; 2 &amp; -1 &amp; | &amp; 8 \
+2 &amp; -3 &amp; 2 &amp; | &amp; -11 \
+-2 &amp; 4 &amp; 3 &amp; | &amp; 3
+\end{pmatrix} ]</p>
+<p>Langkah 2: Mengubah ke Bentuk Eselon Baris (REF)
+Kita mulai dengan mengeliminasi (x) dari persamaan 2 dan 3 dengan menambahkan dua kali persamaan 1 ke persamaan 2 dan menambahkan persamaan 1 ke persamaan 3, diikuti oleh normalisasi dan eliminasi lebih lanjut jika diperlukan. Misalnya, operasi baris dapat menghasilkan:
+[ \begin{pmatrix}
+1 &amp; 2 &amp; -1 &amp; | &amp; 8 \
+0 &amp; -7 &amp; 4 &amp; | &amp; -27 \
+0 &amp; 6 &amp; 2 &amp; | &amp; 11
+\end{pmatrix} ]
+Dan seterusnya, sampai kita mendapatkan bentuk eselon:
+[ \begin{pmatrix}
+1 &amp; 0 &amp; 0 &amp; | &amp; a \
+0 &amp; 1 &amp; 0 &amp; | &amp; b \
+0 &amp; 0 &amp; 1 &amp; | &amp; c
+\end{pmatrix} ]
+Dengan (a), (b), dan (c) adalah solusi dari (x), (y), dan (z).</p>
+<p>Langkah 3: Mengubah ke Bentuk Eselon Baris Tereduksi (RREF)
+Ini langkah opsional untuk beberapa kasus dan dilakukan dengan melanjutkan normalisasi dan eliminasi sehingga matriks mencapai bentuk di mana solusinya langsung terlihat.</p>
+<p>Langkah 4: Substitusi Balik
+Dengan matriks dalam bentuk eselon atau bentuk eselon baris tereduksi, kita dapat langsung menemukan nilai (x), (y), dan (z) dari baris terakhir hingga baris pertama.</p>
+<p>Metode ini sangat berguna dan efisien, terutama untuk sistem persamaan yang kompleks dan besar. Eliminasi Gauss menghilangkan kebutuhan untuk substitusi secara manual, yang seringkali tidak praktis untuk sistem besar atau untuk penerapan komputer.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><strong>contoh</strong><a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="penyelesaian-sistem-persamaan">
 <h1>penyelesaian sistem persamaan<a class="headerlink" href="#penyelesaian-sistem-persamaan" title="Link to this heading">#</a></h1>
@@ -699,20 +753,20 @@ x1: 1
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="notebooks.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Content with notebooks</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
       </div>
     </a>
     <a class="right-next"
-       href="markdown-notebooks.html"
+       href="Tugas1.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+        <p class="prev-next-title"><strong>TUGAS 1</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -732,7 +786,11 @@ x1: 1
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">menggambar persamaan bidang dalam ruang 3D</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#"><strong>TUGAS 1</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sistem-linear-dan-metode-eliminasi-gaussian"><strong>SISTEM LINEAR DAN METODE ELIMINASI GAUSSIAN</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-langkah-metode-eliminasi-gauss">Langkah-langkah Metode Eliminasi Gauss</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh">Contoh</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1"><strong>contoh</strong></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan">penyelesaian sistem persamaan</a></li>
 </ul>
 

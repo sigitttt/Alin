@@ -1,0 +1,52 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.10/dist-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.10/dist-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+
+img = mpimg.imread('Desain tanpa judul.png') #Replace "image.jpg" with the path of your image
+plt.imshow(img)
+plt.axis('off')
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+[0;32m<ipython-input-1-0eb87df3ac8d>[0m in [0;36m<cell line: 4>[0;34m()[0m
+[1;32m      2[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m.[0m[0mimage[0m [0;32mas[0m [0mmpimg[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[0;32m----> 4[0;31m [0mimg[0m [0;34m=[0m [0mmpimg[0m[0;34m.[0m[0mimread[0m[0;34m([0m[0;34m'Desain tanpa judul.png'[0m[0;34m)[0m [0;31m#Replace "image.jpg" with the path of your image[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0mplt[0m[0;34m.[0m[0mimshow[0m[0;34m([0m[0mimg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0mplt[0m[0;34m.[0m[0maxis[0m[0;34m([0m[0;34m'off'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.10/dist-packages/matplotlib/image.py[0m in [0;36mimread[0;34m(fname, format)[0m
+[1;32m   1561[0m             [0;34m"``np.array(PIL.Image.open(urllib.request.urlopen(url)))``."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1562[0m             )
+[0;32m-> 1563[0;31m     [0;32mwith[0m [0mimg_open[0m[0;34m([0m[0mfname[0m[0;34m)[0m [0;32mas[0m [0mimage[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1564[0m         return (_pil_png_to_float_array(image)
+[1;32m   1565[0m                 [0;32mif[0m [0misinstance[0m[0;34m([0m[0mimage[0m[0;34m,[0m [0mPIL[0m[0;34m.[0m[0mPngImagePlugin[0m[0;34m.[0m[0mPngImageFile[0m[0;34m)[0m [0;32melse[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.10/dist-packages/PIL/ImageFile.py[0m in [0;36m__init__[0;34m(self, fp, filename)[0m
+[1;32m    103[0m         [0;32mif[0m [0mis_path[0m[0;34m([0m[0mfp[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    104[0m             [0;31m# filename[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 105[0;31m             [0mself[0m[0;34m.[0m[0mfp[0m [0;34m=[0m [0mopen[0m[0;34m([0m[0mfp[0m[0;34m,[0m [0;34m"rb"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    106[0m             [0mself[0m[0;34m.[0m[0mfilename[0m [0;34m=[0m [0mfp[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    107[0m             [0mself[0m[0;34m.[0m[0m_exclusive_fp[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'Desain tanpa judul.png'
+
